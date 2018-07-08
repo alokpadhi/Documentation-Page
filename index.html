@@ -6,21 +6,64 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">JavaScript Documentation</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+              
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">MDN</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Tutorial
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#introduction">Introduction</a>
+                        <a class="dropdown-item" href="#prerequisites">Prerequisites</a>
+                        <a class="dropdown-item" href="#get_started">Get Started</a>
+                        <a class="dropdown-item" href="#variables">Variables</a>
+                        <a class="dropdown-item" href="#conditional">Conditional Statements</a>
+                        <a class="dropdown-item" href="#loops">Loops</a>
+                        <a class="dropdown-item" href="#function">Function</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="https://developer.mozilla.org/bm/docs/Web/JavaScript" target="_blank">Reference</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.w3schools.com/jS/default.asp" target="_blank">Coding Ground</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
     <nav id="navbar">
         <header>JavaScript Documentation</header>
         <ul>
-            <a class="nav-link" href="#Introduction" rel="internal"><li>Introduction</li></a>
-            <a class="nav-link" href="#Prequisites" rel="internal"><li>Prerequisites</li></a>
-            <a class="nav-link" href="#Get started" rel="internal"><li>Get Started</li></a>
-            <a class="nav-link" href="#Variables" rel="internal"><li>Variables</li></a>
-            <a class="nav-link" href="#Data Types" rel="internal"><li>Data Types</li></a>
-            <a class="nav-link" href="#Conditional Statements" rel="internal"><li>Conditional Statements</li></a>
-            <a class="nav-link" href="#Loops" rel="internal"><li>Loops</li></a>
-            <a class="nav-link" href="#Function" rel="internal"><li>Function</li></a>
-            <a class="nav-link" href="#Regular Expression" rel="internal"><li>Regular Expression</li></a>
+            <a class="nav-link" href="#introduction" rel="internal"><li>Introduction</li></a>
+            <a class="nav-link" href="#prerequisites" rel="internal"><li>Prerequisites</li></a>
+            <a class="nav-link" href="#get_started" rel="internal"><li>Get Started</li></a>
+            <a class="nav-link" href="#variables" rel="internal"><li>Variables</li></a>
+            <a class="nav-link" href="#conditional" rel="internal"><li>Conditional Statements</li></a>
+            <a class="nav-link" href="#loops" rel="internal"><li>Loop</li></a>
+            <a class="nav-link" href="#function" rel="internal"><li>Function</li></a>
+            <a class="nav-link" href="#reference" rel="internal"><li>Reference</li></a>
         </ul>
     </nav>
 
@@ -63,11 +106,11 @@
             </article>
         </section>
 
-        <section class="main-section" id="getstarted">
+        <section class="main-section" id="get_started">
             <header>Get Started</header>
             <article>
                 <p>Let's dive into the world of JavaScript</p>
-                <h3>Comments</h3>
+                <h5>Comments</h5>
                 <p>You can commenting out lines in JavaScript either single or multi line.If you 
                     want to use single line comment then use ' // ' and if you are interested
                     for multi line commenting then use ' /*...*/ '.
@@ -87,13 +130,88 @@
         <section class="main-section" id="variables">
             <header>Variables</header>
             <article>
+                <pre>
+                There are three kinds of declarations in JavaScript.
 
-            </article>
-        </section>
+                var
+                    Declares a variable, optionally initializing it to a value.
 
-        <section class="main-section" id="datatypes">
-            <header>Data Types</header>
-            <article>
+                let
+                    Declares a block-scoped, local variable, optionally initializing it to a value.
+
+                const
+                    Declares a block-scoped, read-only named constant. 
+                </pre>
+                <h5>Variables</h5>
+                <p>You use variables as symbolic names for values in your application. The names of 
+                    variables, called identifiers, conform to certain rules.</p>
+                <p>A JavaScript identifier must start with a letter, underscore (_), or
+                     dollar sign ($); subsequent characters can also be digits (0-9). 
+                     Because JavaScript is case sensitive, letters include the characters 
+                     "A" through "Z" (uppercase) and the characters "a" through "z" 
+                     (lowercase).
+                </p>
+                <code>
+                var a;
+                console.log('The value of a is ' + a); // The value of a is undefined
+                        
+                console.log('The value of b is ' + b); // The value of b is undefined
+                var b;
+                        
+                console.log('The value of c is ' + c); // Uncaught ReferenceError: c is not defined
+                        
+                let x;
+                console.log('The value of x is ' + x); // The value of x is undefined
+                        
+                console.log('The value of y is ' + y); // Uncaught ReferenceError: y is not defined
+                let y;
+                </code>
+                <h5>Table 1: JavaScript Special characters</h5>
+                <table>
+                    <tr>
+                        <th>characters</th>
+                        <th>Meaning</th>
+                    </tr>
+                        <td><code>\0</code></td>
+                        <td>Null Byte</td>
+                    <tr>
+                        <td><code>\b</code></td>
+                        <td>Backspace</td>    
+                    </tr>
+                            
+                    <tr>
+                        <td><code>\f</code></td>
+                        <td>Form feed</td>
+                    </tr>
+                    <tr>
+                        <td><code>\n</code></td>
+                        <td>New line</td>
+                    </tr>
+                    <tr>
+                        <td><code>\r</code></td>
+                        <td>Carriage Return</td>    
+                    </tr>
+                    <tr>
+                        <td><code>\t</code></td>
+                        <td>Tab</td>
+                    </tr>
+                    <tr>
+                        <td><code>\v</code></td>
+                        <td>Vertical tab</td>
+                    </tr>
+                    <tr>
+                        <td><code>\'</code></td>
+                        <td>Single Quote</td>
+                    </tr>
+                    <tr>
+                        <td><code>\"</code></td>
+                        <td>Double Quote</td>
+                    </tr>
+                    <tr>
+                        <td><code>\\</code></td>
+                        <td>Backslash charecher</td>
+                    </tr>
+                </table>
 
             </article>
         </section>
@@ -101,6 +219,68 @@
         <section class="main-section" id="conditional">
             <header>Conditional Statements</header>
             <article>
+                <h5>If...else Statements</h5>
+                <p>Use the if statement to execute a statement if a logical condition is
+                    true. Use the optional else clause to execute a statement if the condition
+                    is false. An if statement looks as follows:</p>
+
+                <code>
+                if (condition) {
+                    statement_1;
+                } else {
+                    statement_2;
+                }
+                </code>
+                <p>You may also compound the statements using else if to have multiple
+                    conditions tested in sequence, as follows:</p>
+                <code>
+                if (condition_1) {
+                    statement_1;
+                } else if (condition_2) {
+                    statement_2;
+                } else if (condition_n) {
+                    statement_n;
+                } else {
+                    statement_last;
+                } 
+                </code>
+                <p>
+                    In the case of multiple conditions only the first logical condition 
+                    which evaluates to true will be executed. To execute multiple 
+                    statements, group them within a block statement ({ ... }) . 
+                    In general, it's good practice to always use block statements, 
+                    especially when nesting if statements:
+                </p>
+                <code>
+                if (condition) {
+                    statement_1_runs_if_condition_is_true;
+                    statement_2_runs_if_condition_is_true;
+                } else {
+                    statement_3_runs_if_condition_is_false;
+                    statement_4_runs_if_condition_is_false;
+                }
+                </code>
+                <h5>Switch Statement</h5>
+                <p>
+                        A switch statement allows a program to evaluate an expression 
+                        and attempt to match the expression's value to a case label. If 
+                        a match is found, the program executes the associated statement.
+                         A switch statement looks as follows:
+                </p>
+                <code>
+                switch (expression) {
+                    case label_1:
+                        statements_1
+                        [break;]
+                    case label_2:
+                        statements_2
+                        [break;]
+                        ...
+                    default:
+                        statements_def
+                        [break;]
+                }
+                </code>
             </article>
 
         </section>
@@ -108,20 +288,156 @@
         <section class="main-section" id="loops">
             <header>Loops</header>
             <article>
+            <p>There are many different kinds of loops, but they all essentially do the
+                 same thing: they repeat an action some number of times (and it's 
+                 actually possible that number could be zero). The various loop mechanisms
+                  offer different ways to determine the start and end points of the loop.
+                   There are various situations that are more easily served by one type of 
+                   loop over the others.
+            </p>
+            <h3>For Statement</h3>
+            <p>A for loop repeats until a specified condition evaluates to false. The JavaScript for
+                loop is similar to the Java and C for loop. A for statement looks as follows:
+            </p>
+            <code>
+            for ([initialExpression]; [condition]; [incrementExpression])
+            statement  
+            </code>
+            <code>
+            function howMany(selectObject) {
+                var numberSelected = 0;
+                for (var i = 0; i < selectObject.options.length; i++) {
+                    if (selectObject.options[i].selected) {
+                        numberSelected++;
+                    }
+                }
+                return numberSelected;
+            }
+            </code>
+            <h3>do...while loop</h3>
+            <p>The do...while statement repeats until a specified condition evaluates 
+                to false. A do...while statement looks as follows:</p>
+            <code>
+            do
+            statement
+            while (condition);
 
+            var i = 0;
+            do {
+                i += 1;
+                console.log(i);
+            } while (i < 5);
+            </code>
+            <h5>While Loop</h5>
+            <p>A while statement executes its statements as long as a specified condition evaluates to true. A while statement looks as follows:</p>
+            <code>
+            while (condition)
+            statement
+
+            var n = 0;
+            var x = 0;
+            while (n < 3) {
+            n++;
+            x += n;
+            }
+            </code>
             </article>
         <section>
 
         <section class="main-section" id="function">
             <header>Function</header>
             <article>
+            <p>A function definition (also called a function declaration, or function statement) consists of the function keyword,  followed by:</p>
+            <ul>
+                <li>The name of the function.</li>
+                <li>A list of parameters to the function, enclosed in parentheses and separated by commas.</li>
+                <li>The JavaScript statements that define the function, enclosed in curly brackets, { }.</li>
+            </ul>
+            <code>
+            function myFunc(theObject) {
+                theObject.make = 'Toyota';
+            }
+                      
+            var mycar = {make: 'Honda', model: 'Accord', year: 1998};
+            var x, y;
+                      
+            x = mycar.make; // x gets the value "Honda"
+                      
+            myFunc(mycar);
+            y = mycar.make; // y gets the value "Toyota"
+                            // (the make property was changed by the function)
+            </code>
+           
+            <code>function square(num){
+            return n * n;
+            }
+            </code>
+            <p>if you define the function square, you could call it as follows:</p>
+            <code>square(5);</code>
+            <code>
+            // The following variables are defined in the global scope
+            var num1 = 20,
+            num2 = 3,
+            name = 'Chamahk';
+                    
+            // This function is defined in the global scope
+            function multiply() {
+                return num1 * num2;
+            }
+                    
+            multiply(); // Returns 60
+                    
+            // A nested function example
+            function getScore() {
+                var num1 = 2,
+                    num2 = 3;
+                      
+                function add() {
+                    return name + ' scored ' + (num1 + num2);
+                }
+                      
+                return add();
+            }
+                    
+            getScore(); // Returns "Chamahk scored 5"
+            </code>
+            <h5>Nested Function</h5>
+            <ul>
+                <li>The inner function can be accessed only from statements in the outer function</li>
+                <li>The inner function forms a closure: the inner function can use the arguments and variables of the outer function, while the outer function cannot use the arguments and variables of the inner function.</li>
+            </ul>
+            <code>
+            function addSquares(a, b) {
+                function square(x) {
+                    return x * x;
+                }
+                return square(a) + square(b);
+            }
+            a = addSquares(2, 3); // returns 13
+            b = addSquares(3, 4); // returns 25
+            c = addSquares(4, 5); // returns 41
+            </code>
+            <p>Name Conflicts:</p>
+            <code>
+            function outside() {
+                var x = 5;
+                function inside(x) {
+                    return x * 2;
+                }
+                return inside;
+            }
+                      
+            outside()(10); // returns 20 instead of 10
+            </code>
+           
 
             </article>
         </section>
         
-        <section class="main-section" id="regularexpression">
-            <header>Regular Expression</header>
+        <section class="main-section" id="reference">
+            <header>Reference</header>
             <article>
+                    <li>All the documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">MDN</a>
             </article>
         </section>
     </main>
